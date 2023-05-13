@@ -1,0 +1,8 @@
+<p *ngIf="!countriesLoaded" class="loadingMessage">Loading...</p>
+<div *ngIf="countriesLoaded" class="transactionsCountrySelector">
+  Select country: <select id="countrySelector" (change)="changeCountry()" [(ngModel)]="selectedCountry">
+  <option value="xxx" disabled [defaultSelected]="true" >--select--</option>
+  <option *ngFor="let country of countries" [ngValue]="country">{{country}}</option>
+</select>
+  <button *ngIf="selectedCountry!='xxx'"  (click)="clear()">Reset</button>
+</div>
