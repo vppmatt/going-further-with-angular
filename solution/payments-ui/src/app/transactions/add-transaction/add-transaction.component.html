@@ -1,0 +1,31 @@
+<form class="addTransactionsForm">
+  <h2>New transaction</h2>
+  <label for="orderId">Order Id</label>
+  <input type="text" id="orderId" name="orderId" [(ngModel)] = "newTransaction.orderId"  />
+  <br/>
+  <label for="date">Date</label>
+  <input type="date" id="date" name="date" [(ngModel)] = "newTransaction.date" />
+  <br/>
+  <label for="country">Country</label>
+  <input type="text"  id="country" name="country" [(ngModel)] = "newTransaction.country"/>
+  <br/>
+  <label for="currency">Amount</label>
+  <input type="text"  id="currency" name="currency" [(ngModel)] = "newTransaction.currency" />
+  <br/>
+  <label for="amount">Amount</label>
+  <input type="text"  id="amount" name="amount" [(ngModel)] = "newTransaction.amount" />
+  <br/>
+  <label for="taxCode">Tax Code</label>
+  <input type="text"  id="taxCode" name="taxCode" [(ngModel)] = "newTransaction.taxCode" />
+  <br/>
+  <label for="amount">Tax Rate</label>
+  <input type="text"  id="taxRate" name="taxRate" [(ngModel)] = "newTransaction.taxRate" />
+  <br/>
+  <label for="type">Type</label>
+  <select id="type" name="type" [(ngModel)] = "newTransaction.type" >
+    <option *ngFor="let type of types" [value]="type">{{type}}</option>
+  </select>
+  <br/>
+  <button (click)="save()">Save</button>
+  <div class="addTransactionMessage">{{message}}</div>
+</form>

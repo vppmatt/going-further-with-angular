@@ -1,0 +1,3 @@
+<app-country-selector *ngIf="accountNumber==0" (countryChangedEvent)="countryChanged($event)" ></app-country-selector>
+<app-account-search *ngIf="country=='xxx'" (accountNumberEntered)="accountNumberProvided($event)" ></app-account-search>
+<app-transactions-list></app-transactions-list>
